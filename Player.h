@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include "Inventory.h"
+
 
 class Player {
     private:
@@ -10,6 +12,7 @@ class Player {
         int health;
         int maxHealth;
         int attackPower;
+        Inventory inventory;
 
     public:
         Player();
@@ -23,6 +26,8 @@ class Player {
         int getMaxHealth() const;
         int getAttackPower() const;
         void displayStatus() const;
+        void showInventory() const;
+        void addItem(const Item& item);
 };
 
 #endif

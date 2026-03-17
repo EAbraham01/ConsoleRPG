@@ -3,18 +3,15 @@
 
 using namespace std;
 
-Player::Player(){
+Player::Player(): inventory(10){
     name = "Hero";
     health = 100;
     maxHealth = 100;
     attackPower = 10;
 }
 
-Player::Player(std::string name, int health, int attackPower){
-    this->name = name;
-    this->health = health;
-    this->maxHealth = health;
-    this->attackPower = attackPower;
+Player::Player(std::string name, int health, int attackPower): name(name), health(health), maxHealth(health), attackPower(attackPower), inventory(10){
+    cout << "Default constructor called for Player." << endl;
 }
 
 Player::~Player(){
@@ -48,4 +45,11 @@ void Player::displayStatus() const{
     cout << "[" << name << "]" << " - HP: " << health << "/" << maxHealth << endl;
     if (health == 0)
         cout << name << " falls to the ground, deafeated." << endl;
+}
+
+void Player::showInventory() const{
+    inventory.display();
+}
+void Player::addItem(const Item& item){
+    inventory.addItem(item);
 }

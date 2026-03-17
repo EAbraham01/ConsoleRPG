@@ -4,7 +4,14 @@
 using namespace std;
 
 int main(){
-    Player hero;
+    Player hero("Hero", 100, 10 );
+    Item sword("Sword", 10);
+    Item shield("Shield", 15);
+    Item axe("Axe", 10);
+    hero.addItem(sword);
+    hero.addItem(shield);
+    hero.showInventory();
+    cout << "Total Items: " << axe.getTotalItems() << endl;
     Player wizard("Harry", 120, 15);
 
     hero.displayStatus();
